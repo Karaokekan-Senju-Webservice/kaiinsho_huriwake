@@ -3,6 +3,59 @@
 <head>
     <meta charset="utf-8" />
     <title>アプリへのリダイレクト</title>
+    <style>
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+            text-align: center;
+            padding-top: 10%;
+        }
+
+        .app-icon {
+            width: 120px; /* アイコンのサイズを調整 */
+            height: auto;
+        }
+
+        .app-link {
+            display: block;
+            margin: 20px auto;
+            text-decoration: none;
+            color: #000;
+            font-size: 20px;
+        }
+
+        #ad-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5433245635181525" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div>
+        <img src="app-icon.png" alt="アプリアイコン" class="app-icon">
+        <h1>カラオケ館公式アプリ</h1>
+        <p id="countdown">リダイレクトまで<span id="timer">5</span>秒</p>
+        <p>アプリページへ移動しています…</p>
+        <p>しばらくお待ちください。移動しない場合は、<a href="https://karaokekan.jp/app" class="app-link">こちら</a>をクリックしてください。</p>
+    </div>
+
+    <div id="ad-container">
+        <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-5433245635181525"
+            data-ad-slot="6890935653"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
     <script>
         function getMobileOperatingSystem() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -21,13 +74,11 @@
 
             return "unknown";
         }
-    </script>
 
-    <script>
-        function DetectAndServe(){
+        function DetectAndServe() {
             let os = getMobileOperatingSystem();
             if (os == "Android") {
-                window.location.href = "https://play.google.com/store/apps/details?id=jp.karaokekan.karakan.karakan&hl=ja&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"; 
+                window.location.href = "https://play.google.com/store/apps/details?id=jp.karaokekan.karakan.karakan&hl=ja&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1";
             } else if (os == "iOS") {
                 window.location.href = "https://apps.apple.com/jp/app/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1%E9%A4%A8%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1341634219";
             } else if (os == "Windows Phone") {
@@ -36,12 +87,21 @@
                 window.location.href = "https://karaokekan.jp/app";
             }
         }
+
+        let countdown = 5;
+        const countdownTimer = document.getElementById('timer');
+
+        function redirectCountdown() {
+            countdownTimer.textContent = countdown;
+            if (countdown === 0) {
+                DetectAndServe();
+            } else {
+                countdown--;
+                setTimeout(redirectCountdown, 1000);
+            }
+        }
+
+        setTimeout(redirectCountdown, 1000);
     </script>
-</head>
-<body onload="DetectAndServe()">
-    <div style="text-align: center; padding-top: 20%;">
-        <h1>アプリページへ移動しています…</h1>
-        <p>しばらくお待ちください。移動しない場合は、<a href="https://karaokekan.jp/app">こちら</a>をクリックしてください。</p>
-    </div>
 </body>
 </html>

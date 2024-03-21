@@ -1,120 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <script>
-      if (!sessionStorage.getItem("isReloaded")) {
-        sessionStorage.setItem("isReloaded", true);
-        window.location.reload();
-      }
-    </script>
-    <!-- admax -->
-<script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "f9515c87d3751a68958bb24758adf9a2",type: "overlay"});</script>
-<script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
-<!-- admax -->
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CVKVBHF0XR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
+  <script>
+    if (!sessionStorage.getItem("isReloaded")) {
+      sessionStorage.setItem("isReloaded", true);
+      window.location.reload();
+    }
+  </script>
+  <!-- admax -->
+  <script type="text/javascript">(admaxads = window.admaxads || []).push({admax_id: "f9515c87d3751a68958bb24758adf9a2",type: "overlay"});</script>
+  <script type="text/javascript" charset="utf-8" src="https://adm.shinobi.jp/st/t.js" async></script>
+  <!-- admax -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CVKVBHF0XR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CVKVBHF0XR');
+  </script>
+  <title>アプリへのリダイレクト</title>
+  <style>
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+      text-align: center;
+      padding-top: 10%;
+      padding-bottom: 30px; /* 広告スペース確保のため下部に余白を追加 */
+    }
 
-  gtag('config', 'G-CVKVBHF0XR');
-</script>
- 
+    .app-icon {
+      width: 120px; /* アイコンのサイズを調整 */
+      height: auto;
+    }
 
-    <title>アプリへのリダイレクト</title>
-    <style>
-        body {
-            font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
-            text-align: center;
-            padding-top: 10%;
-            padding-bottom: 30px; /* 広告スペース確保のため下部に余白を追加 */
-        }
+    .app-link {
+      display: block;
+      margin: 20px auto;
+      text-decoration: none;
+      color: #000;
+      font-size: 20px;
+      font-weight: bold; /* リンクテキストを太字に */
+      color: blue; /* リンクテキストを青色に */
+    }
 
-        .app-icon {
-            width: 120px; /* アイコンのサイズを調整 */
-            height: auto;
-        }
-
-        .app-link {
-            display: block;
-            margin: 20px auto;
-            text-decoration: none;
-            color: #000;
-            font-size: 20px;
-        }
-
-        #ad-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            margin-top: 5px; /* 上部に余白を追加 */
-            text-align: center;
-            padding: 10px;
-            background-color: #f5f5f5;
-            z-index: 9999; /* 広告が他の要素に被られないようにz-indexを設定 */
-        }
-    </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5433245635181525" crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-5433245635181525">
+    #ad-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin-top: 5px; /* 上部に余白を追加 */
+      text-align: center;
+      padding: 10px;
+      background-color: #f5f5f5;
+      z-index: 9999; /* 広告が他の要素に被られないようにz-indexを設定 */
+      padding-bottom: env(safe-area-inset-bottom); /* 広告が操作バーに被らない様に下部に余白追加 */
+    }
+    
+    #timer {
+      color: red; /* 秒数を赤色に */
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5433245635181525" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-5433245635181525">
 </head>
 <body>
-    <div>
-        <img src="app-icon.png" alt="アプリアイコン" class="app-icon">
-        <h1>カラオケ館公式アプリ</h1>
-        <p id="countdown">リダイレクトまで<span id="timer">5</span>秒</p>
-        <p>アプリページへ移動しています…</p>
-        <p>しばらくお待ちください。移動しない場合は、<a href="https://karaokekan.jp/app" class="app-link">こちら</a>をクリックしてください。</p>
-    </div>
+  <div>
+    <img src="app-icon.png" alt="アプリアイコン" class="app-icon">
+    <h1>カラオケ館公式アプリ</h1>
+    <p id="countdown">リダイレクトまで<span id="timer">5</span>秒</p>
+    <p>アプリページへ移動しています…</p>
+    <p>しばらくお待ちください。移動しない場合は、<a href="https://karaokekan.jp/app" class="app-link">こちら</a>をクリックしてください。</p>
+  </div>
+  <div id="ad-container">
+    <!-- 広告コンテナ -->
+  </div>
+  <script>
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+      }
+      if (/android/i.test(userAgent)) {
+        return "Android";
+      }
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+      }
+      return "unknown";
+    }
 
-    <script>
-        function getMobileOperatingSystem() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    function DetectAndServe() {
+      let os = getMobileOperatingSystem();
+      if (os == "Android") {
+        window.location.href = "https://play.google.com/store/apps/details?id=jp.karaokekan.karakan.karakan&hl=ja&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1";
+      } else if (os == "iOS") {
+        window.location.href = "https://apps.apple.com/jp/app/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1%E9%A4%A8%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1341634219";
+      } else if (os == "Windows Phone") {
+        window.location.href = "https://karaokekan.jp/app";
+      } else {
+        window.location.href = "https://karaokekan.jp/app";
+      }
+    }
 
-            if (/windows phone/i.test(userAgent)) {
-                return "Windows Phone";
-            }
-
-            if (/android/i.test(userAgent)) {
-                return "Android";
-            }
-
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                return "iOS";
-            }
-
-            return "unknown";
-        }
-
-        function DetectAndServe() {
-            let os = getMobileOperatingSystem();
-            if (os == "Android") {
-                window.location.href = "https://play.google.com/store/apps/details?id=jp.karaokekan.karakan.karakan&hl=ja&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1";
-            } else if (os == "iOS") {
-                window.location.href = "https://apps.apple.com/jp/app/%E3%82%AB%E3%83%A9%E3%82%AA%E3%82%B1%E9%A4%A8%E5%85%AC%E5%BC%8F%E3%82%A2%E3%83%97%E3%83%AA/id1341634219";
-            } else if (os == "Windows Phone") {
-                window.location.href = "https://karaokekan.jp/app";
-            } else {
-                window.location.href = "https://karaokekan.jp/app";
-            }
-        }
-
-        let countdown = 5;
-        const countdownTimer = document.getElementById('timer');
-
-        function redirectCountdown() {
-            countdownTimer.textContent = countdown;
-            if (countdown === 0) {
-                DetectAndServe();
-            } else {
-                countdown--;
-                setTimeout(redirectCountdown, 1000);
-            }
-        }
-
+    let countdown = 5;
+    const countdownTimer = document.getElementById('timer');
+    function redirectCountdown() {
+      countdownTimer.textContent = countdown;
+      if (countdown === 0) {
+        DetectAndServe();
+      } else {
+        countdown--;
         setTimeout(redirectCountdown, 1000);
-    </script>
+      }
+    }
+    setTimeout(redirectCountdown, 1000);
+  </script>
 </body>
 </html>
